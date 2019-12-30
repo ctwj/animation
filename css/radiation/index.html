@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>radiation</title>
+    <style>
+    .banner_dot i {
+        animation-play-state: running;
+    }
+    .banner_dot i {
+        transform-origin: 50% 50%;
+        width: 50px;
+        height: 50px;
+        display: block;
+        border-radius: 100%;
+        background: #fb8e17;
+    }
+    .banner_dot_rn {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: 50px;
+        left: 50px;
+        border-radius: 100%;
+        z-index: 4;
+        box-shadow: 0 0 5px rgba(0,0,0, .1);
+        animation-duration: 24s;
+        animation-timing-function: ease;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+        animation-fill-mode: none;
+        animation-name: ani_rn;
+        animation-play-state: none;
+    }
+    .banner_dot i:after, .banner_dot i:before {
+        animation: dotAni2 8s -2s ease infinite;
+    }
+    .banner_dot_rn::before, .banner_dot_rn::after {
+        content: " ";
+        position: absolute;
+        border-radius: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        background: #fb8e17;
+    }
+    .banner_dot_rn::before {
+        width: 90px;
+        height: 90px;
+    }
+    .banner_dot_rn::after {
+        width: 110px;
+        height: 110px;
+    }
+    @keyframes ani_m {
+        0% {
+            opacity: 0;
+        }
+        30%, 65% {
+            opacity: 1;
+            transform: translate(0) scale(1);
+        }
+        85%, 100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes ani_rn {
+        0% {
+            opacity: 0
+        }
+
+        30%,65% {
+            opacity: 1;
+            -webkit-transform: translate(0) scale(1);
+            -moz-transform: translate(0) scale(1);
+            transform: translate(0) scale(1)
+        }
+
+        85%,100% {
+            opacity: 0
+        }
+    }
+    @keyframes dotAni2 {
+        0% {
+            -webkit-transform: translate(-50%,-50%) scale(0);
+            transform: translate(-50%,-50%) scale(0);
+            opacity: 1
+        }
+
+        100% {
+            -webkit-transform: translate(-50%,-50%) scale(1);
+            transform: translate(-50%,-50%) scale(1);
+            opacity: 0
+        }
+    }
+    #rn {
+        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU0LjEgKDc2NDkwKSAtIGh0dHBzOi8vc2tldGNoYXBwLmNvbSAtLT4KICAgIDx0aXRsZT5pY29uX3FxPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9Imljb25fcXEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxwYXRoIGQ9Ik0xMC40LDEyLjg5OTQ5NDkgTDQuODk5NDk0OTQsMTIuODk5NDk0OSBMNC44OTk0OTQ5NCw0Ljg5OTQ5NDk0IEwxMi44OTk0OTQ5LDQuODk5NDk0OTQgTDEyLjg5OTQ5NDksMTAuODk5NDk0OSBMMTIuODk5NDk0OSwxMi44OTk0OTQ5IEwxMy4zOTk0OTQ5LDEyLjg5OTQ5NDkgTDEzLjM5OTQ5NDksMTAuODk5NDk0OSBMMTguODk5NDk0OSwxMC44OTk0OTQ5IEwxOC44OTk0OTQ5LDE4Ljg5OTQ5NDkgTDEwLjg5OTQ5NDksMTguODk5NDk0OSBMMTAuODk5NDk0OSwxMi44OTk0OTQ5IEwxMC45LDEwLjg5OTQ5NDkgTDEwLjQsMTAuODk5NDk0OSBMMTAuNCwxMi44OTk0OTQ5IFogTTEwLjg5OTQ5NDksNi44OTk0OTQ5NCBMNi44OTk0OTQ5NCw2Ljg5OTQ5NDk0IEw2Ljg5OTQ5NDk0LDEwLjg5OTQ5NDkgTDEwLjg5OTQ5NDksMTAuODk5NDk0OSBMMTAuODk5NDk0OSw2Ljg5OTQ5NDk0IFogTTE2Ljg5OTQ5NDksMTIuODk5NDk0OSBMMTIuODk5NDk0OSwxMi44OTk0OTQ5IEwxMi44OTk0OTQ5LDE2Ljg5OTQ5NDkgTDE2Ljg5OTQ5NDksMTYuODk5NDk0OSBMMTYuODk5NDk0OSwxMi44OTk0OTQ5IFoiIGlkPSLlvaLnirbnu5PlkIgiIGZpbGw9IiNGRkZGRkYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDExLjg5OTQ5NSwgMTEuODk5NDk1KSByb3RhdGUoMTM1LjAwMDAwMCkgdHJhbnNsYXRlKC0xMS44OTk0OTUsIC0xMS44OTk0OTUpICI+PC9wYXRoPgogICAgPC9nPgo8L3N2Zz4=);
+    }
+    </style>
+</head>
+<body>
+<div class="banner_dot">
+    <i class="banner_dot_rn">
+        <span id="rn"></span>
+    </i>
+</div>
+</body>
+</html>

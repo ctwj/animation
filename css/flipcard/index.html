@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flipcard</title>
+    <style>
+        .container {
+            width: 410px;
+            height: 520px;
+            margin: 0 auto;
+            perspective: 800px;
+            -webkit-perspective: 800px;
+            -moz-perspective: 800px;
+            -ms-perspective: 800px;
+        }
+        .card {
+            width: 220px;
+            height: 376px;
+        }
+        .card > div {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 50%;
+            margin-left:-110px;
+        }
+        .flipcard {
+            backface-visibility: hidden;
+            transition: all 1s ease-in-out;
+            transform-style: preserve-3d;
+        }
+        .front {
+            z-index: 2;
+            transform: rotateY(180deg);
+            transition: all 1s ease;
+        }
+        .cover {
+            transition: all 1s ease;
+            transform: rotateY(0deg);
+            z-index: 3;
+        }
+        .opencard .front {
+            transform: rotateY(0deg);
+        }
+        .opencard .cover {
+            transform: rotateY(-180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="card" class="flipcard card">
+            <div class="front">
+                <img src="../../assert/image/front.webp" class="card" alt="" srcset="">
+            </div>
+            <div class="cover">
+                <img src="../../assert/image/cover.webp" class="card" alt="" srcset="">
+            </div>
+        </div>
+    </div>
+    <script>
+        // 给card 添加 flip类
+        let card = document.getElementById('card');
+        card.addEventListener('click', function(obj) {
+            if (!/\opencard\b/i.test(card.className)) {
+                card.className += ' opencard';
+            } else  {
+                card.className = 'flipcard card';
+            }
+            console.log(card.className);
+        });
+    </script>
+</body>
+</html>
