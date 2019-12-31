@@ -6,17 +6,100 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>example</title>
     <style>
-        .desk {
+        .ctwj_carddesk {
             width: 550px;
             height: 550px;
             position: relative;
             background-color: #cccccc;
         }
+        .ctwj_carddesk > div {
+            position: absolute;
+            height: 188px;
+            width: 110px;
+            top: 50%;
+            left: 50%;
+            margin-left: -55px;
+            margin-top: -99px;
+            background: url(../../assert/image/cover.webp) no-repeat;
+            background-size: 100% 100%;
+            transform-origin: 50% 50%;
+        }
+        .ctwj_cut div:first-child {
+            animation: firstcard 6s linear 0s forwards running;
+            z-index: 3;
+        }
+        .ctwj_cut div:nth-child(2) {
+            animation: secondcard 6s linear 0s forwards running;
+            z-index: 2;
+        }
+        .ctwj_cut div:last-child {
+            animation: lastcard 6s linear 0s forwards running;
+            z-index: 1;
+        }
+        @keyframes firstcard {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            10%, 90% {
+                transform: rotate(90deg);
+            }
+            30%, 40% {
+                
+                transform: rotate(90deg) translateX(-150px);
+            }
+            50% {
+                transform: rotate(90deg) translateX(0px);
+            }
+            70% {
+                transform: rotate(90deg) translateX(150px);
+            }
+        }
+        @keyframes secondcard {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            10%, 90% {
+                transform: rotate(90deg);
+            }
+        }
+        @keyframes lastcard {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            10%, 90% {
+                transform: rotate(90deg);
+            }
+            30%, 70% {
+                transform: rotate(90deg) translateX(150px);
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="desk">
-
+    <div id="ctwj_carddesk" class="ctwj_carddesk">
+        <div class="top"></div>
+        <div class="middle"></div>
+        <div class="bottom"></div>
     </div>
+    <pre>
+        1. 分为5个阶段， 初始阶段 正放在中央
+        2. 切换为倒置状态
+        3. 分为3个部分，上中下， 
+        4. 上部分牌，移到中间， 再移动到下部分
+        5. 下部分，所有牌一起移动到中间
+        6. 移回初始状态
+    </pre>
+    <button onclick="cut()">切</button>
+    <script>
+        function cut() {
+            let desk = document.getElementById('ctwj_carddesk');
+            if (!/ctwj_cut/i.test(desk.className)) {
+                desk.className += ' ctwj_cut';
+            } else {
+                desk.className = 'ctwj_carddesk';
+            }
+            console.log(desk.className);
+        }
+    </script>
 </body>
 </html>

@@ -9,3 +9,9 @@ Collect small CSS animations
 
 3. css/flipcard
 翻牌
+
+4. css/cutcard
+切牌
+
+4. css/shufflecard
+洗牌
