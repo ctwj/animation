@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
             position: relative;
             background-color: #cccccc;
         }
+
         .ctwj_carddesk div {
             position: absolute;
             height: 99px;
@@ -21,6 +23,7 @@
             margin-left: -28px;
             margin-top: -50px;
         }
+
         .card {
             position: absolute;
             left: 0;
@@ -28,52 +31,300 @@
             background: url(../../assert/image/cover.webp) no-repeat;
             background-size: 100% 100%;
         }
+
+        /* .ctwj_shuffle div:nth-child(5n-4) div.card {
+            animation: rotateItem 0.5s linear 1s 16;
+        }
+
+        .ctwj_shuffle div:nth-child(5n-3) div.card {
+            animation: rotateItem 0.8s linear 1s 10;
+        }
+
+        .ctwj_shuffle div:nth-child(5n-2) div.card {
+            animation: rotateItem 0.6s linear 1s 13;
+        }
+
+        .ctwj_shuffle div:nth-child(5n-1) div.card {
+            animation: rotateItem 0.7s linear 1s 12;
+        }
+
+        .ctwj_shuffle div:nth-child(5n) div.card {
+            animation: rotateItem 0.9s linear 1s 9;
+        } */
+
         .ctwj_shuffle div:nth-child(1) {
-            transform-origin: 50% 50%;
-            animation: initMove 1s linear 0s 1 forwards, 
-                /* rotateCover 3s linear 1s 2 forwards, */
-                finishMove .1s linear 7s 1 forwards;
+            animation: initPosition 1s linear 0s 1 forwards, roundMove 2s linear 1s 2 forwards, finishPosition 1s linear 7s 1 forwards;
         }
-        .ctwj_shuffle div:nth-child(1) div {
-            transform-origin: 0px 75px;
-            animation: roundMove 2s cubic-bezier(.01,.58,.42,1) 1s 3 normal;
+
+        .ctwj_shuffle div:nth-child(1) div.card {
+            animation: rotateItem 0.5s linear 1s 8;
         }
+
+        .ctwj_shuffle div:nth-child(2) {
+            animation: initPosition 1s linear 0s 1 forwards, roundMove 2s linear 1.1s 2.1 forwards, finishPosition 1s linear 7s 1 forwards;
+        }
+
+        .ctwj_shuffle div:nth-child(2) div.card {
+            animation: rotateItem 0.5s linear 1.1s 8;
+        }
+
+        .ctwj_shuffle div:nth-child(3) {
+            animation: initPosition 1s linear 0s 1 forwards, roundMove 2s linear 1.2s 2.2 forwards, finishPosition 1s linear 7s 1 forwards;
+        }
+
+        .ctwj_shuffle div:nth-child(3) div.card {
+            animation: rotateItem 0.5s linear 1.2s 8;
+        }
+
+        .ctwj_shuffle div:nth-child(4) {
+            animation: initPosition 1s linear 0s 1 forwards, roundMove 2.5s linear 1.3s 1.4 forwards, finishPosition 1s linear 7s 1 forwards;
+        }
+
+        .ctwj_shuffle div:nth-child(4) div.card {
+            animation: rotateItem 0.5s linear 1.3s 8;
+        }
+
+        .ctwj_shuffle div:nth-child(5) {
+            animation: initPosition 1s linear 0s 1 forwards, roundMove 2.5s linear 1.4s 1.6 forwards, finishPosition 1s linear 7s 1 forwards;
+        }
+
+        .ctwj_shuffle div:nth-child(5) div.card {
+            animation: rotateItem 0.5s linear 1.4s 8;
+        }
+
+        .ctwj_shuffle div:nth-child(6) {
+            animation: initPosition 1s linear 0s 1 forwards, roundMove 2.5s linear 1.5s 1.45 forwards, finishPosition 1s linear 7s 1 forwards;
+        }
+
+        .ctwj_shuffle div:nth-child(6) div.card {
+            animation: rotateItem 0.5s linear 1.5s 8;
+        }
+
+        .ctwj_shuffle div:nth-child(7) {
+            animation: initPosition 1s linear 0s 1 forwards, roundMove 2.2s linear 1.6s 1.7 forwards, finishPosition 1s linear 7s 1 forwards;
+        }
+
+        .ctwj_shuffle div:nth-child(7) div.card {
+            animation: rotateItem 0.5s linear 1.6s 8;
+        }
+
+        .ctwj_shuffle div:nth-child(8) {
+            animation: initPosition 1s linear 0s 1 forwards, roundMove 2.2s linear 1.7s 1.8 forwards, finishPosition 1s linear 7s 1 forwards;
+        }
+
+        .ctwj_shuffle div:nth-child(8) div.card {
+            animation: rotateItem 0.5s linear 1.7s 8;
+        }
+
+        .ctwj_shuffle div:nth-child(9) {
+            animation: initPosition 1s linear 0s 1 forwards, roundMove 2.2s linear 1.8s 1.9 forwards, finishPosition 1s linear 7s 1 forwards;
+        }
+
+        .ctwj_shuffle div:nth-child(9) div.card {
+            animation: rotateItem 0.5s linear 1.8s 8;
+        }
+
+        .ctwj_shuffle div:nth-child(10) {
+            animation: initPosition 1s linear 0s 1 forwards, roundMove 2s linear 1.9s 1.95 forwards, finishPosition 1s linear 7s 1 forwards;
+        }
+
+        .ctwj_shuffle div:nth-child(10) div.card {
+            animation: rotateItem 0.5s linear 1.9s 8;
+        }
+
+        .ctwj_shuffle div:nth-child(11) {
+            animation: initPosition 1s linear 0s 1 forwards, roundMove 2s linear 2s 2.25 forwards, finishPosition 1s linear 7s 1 forwards;
+        }
+
+        .ctwj_shuffle div:nth-child(11) div.card {
+            animation: rotateItem 0.5s linear 2s 8;
+        }
+
+        .ctwj_shuffle div:nth-child(12) {
+            animation: initPosition 1s linear 0s 1 forwards, roundMove 2s linear 2.1s 2.15 forwards, finishPosition 1s linear 7s 1 forwards;
+        }
+
+        .ctwj_shuffle div:nth-child(12) div.card {
+            animation: rotateItem 0.5s linear 2.1s 8;
+        }
+
+        .ctwj_shuffle div:nth-child(13) {
+            animation: initPosition 1s linear 0s 1 forwards, roundMove 2s linear 2.2s 1.3 forwards, finishPosition 1s linear 7s 1 forwards;
+        }
+
+        .ctwj_shuffle div:nth-child(13) div.card {
+            animation: rotateItem 0.5s linear 2.2s 8;
+        }
+
+        .ctwj_shuffle div:nth-child(14) {
+            animation: initPosition 1s linear 0s 1 forwards, roundMove 2.5s linear 2.3s 1.5 forwards, finishPosition 1s linear 7s 1 forwards;
+        }
+
+        .ctwj_shuffle div:nth-child(14) div.card {
+            animation: rotateItem 0.5s linear 2.3s 8;
+        }
+
+        .ctwj_shuffle div:nth-child(15) {
+            animation: initPosition 1s linear 0s 1 forwards, roundMove 2.5s linear 2.4s 1.65 forwards, finishPosition 1s linear 7s 1 forwards;
+        }
+
+        .ctwj_shuffle div:nth-child(15) div.card {
+            animation: rotateItem 0.5s linear 2.4s 8;
+        }
+
+        .ctwj_shuffle div:nth-child(16) {
+            animation: initPosition 1s linear 0s 1 forwards, roundMove 2.5s linear 2.5s 1.75 forwards, finishPosition 1s linear 7s 1 forwards;
+        }
+
+        .ctwj_shuffle div:nth-child(16) div.card {
+            animation: rotateItem 0.5s linear 2.5s 8;
+        }
+
+        .ctwj_shuffle div:nth-child(17) {
+            animation: initPosition 1s linear 0s 1 forwards, roundMove 2.2s linear 2.6s 1.35 forwards, finishPosition 1s linear 7s 1 forwards;
+        }
+
+        .ctwj_shuffle div:nth-child(17) div.card {
+            animation: rotateItem 0.5s linear 2.6s 8;
+        }
+
+        .ctwj_shuffle div:nth-child(18) {
+            animation: initPosition 1s linear 0s 1 forwards, roundMove 2.2s linear 2.7s 1.85 forwards, finishPosition 1s linear 7s 1 forwards;
+        }
+
+        .ctwj_shuffle div:nth-child(18) div.card {
+            animation: rotateItem 0.5s linear 2.7s 8;
+        }
+
+        .ctwj_shuffle div:nth-child(19) {
+            animation: initPosition 1s linear 0s 1 forwards, roundMove 2.2s linear 2.8s 1.55 forwards, finishPosition 1s linear 7s 1 forwards;
+        }
+
+        .ctwj_shuffle div:nth-child(19) div.card {
+            animation: rotateItem 0.5s linear 2.8s 8;
+        }
+
+        .ctwj_shuffle div:nth-child(20) {
+            animation: initPosition 1s linear 0s 1 forwards, roundMove 2s linear 2.9s 2 forwards, finishPosition 1s linear 7s 1 forwards;
+        }
+
+        .ctwj_shuffle div:nth-child(20) div.card {
+            animation: rotateItem 0.5s linear 2.9s 8;
+        }
+
+
+        @keyframes initPosition {
+            from {
+                transform: translateX(0px);
+            }
+
+            to {
+                transform: translateX(100px);
+            }
+        }
+
+        @keyframes finishPosition {
+            from {
+                transform: translateX(0px);
+            }
+
+            to {
+                transform: translateX(0px);
+            }
+        }
+
         @keyframes roundMove {
-            0% {transform: rotate(0deg);}
-            100% {transform: rotate(360deg);}
+            0% {
+                transform: rotate(0deg) translateX(100px) rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(100px) rotate(-360deg);
+            }
         }
-        @keyframes moveX {
-            0%, 50%, 100%{transform: translateX(0px)}
-            25% { transform: translateX(-65px)}
-            75% {transform: translateX(65px)}
-        }
-        @keyframes moveY {
-            0%, 100%{transform: translateY(75px)}
-            25%, 75% {transform: translateY(0px)}
-            50%{transform: translateY(-75px)}
-        }
-        @keyframes rotateCover {
-            0%{transform:rotate(0deg)}
-            100% {transform:rotate(1440deg)}
-        }
-        @keyframes initMove {
-            0%{transform: translateX(0) translateY(0);}
-            100%{transform: translateX(0) translateY(50px);}
-        }
-        @keyframes finishMove {
-            0% {transform: translateX(0) translateY(50px)}
-            100%{transform: translateX(0) translateY(0);}
+
+        @keyframes rotateItem {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
+
 <body>
     <div id="ctwj_carddesk" class="ctwj_carddesk">
         <div>
-            <div>
-                <div class="card"></div>
-            </div>
+            <div class="card"></div>
+        </div>
+        <div>
+            <div class="card"></div>
+        </div>
+        <div>
+            <div class="card"></div>
+        </div>
+        <div>
+            <div class="card"></div>
+        </div>
+        <div>
+            <div class="card"></div>
+        </div>
+        <div>
+            <div class="card"></div>
+        </div>
+        <div>
+            <div class="card"></div>
+        </div>
+        <div>
+            <div class="card"></div>
+        </div>
+        <div>
+            <div class="card"></div>
+        </div>
+        <div>
+            <div class="card"></div>
+        </div>
+        <div>
+            <div class="card"></div>
+        </div>
+        <div>
+            <div class="card"></div>
+        </div>
+        <div>
+            <div class="card"></div>
+        </div>
+        <div>
+            <div class="card"></div>
+        </div>
+        <div>
+            <div class="card"></div>
+        </div>
+        <div>
+            <div class="card"></div>
+        </div>
+        <div>
+            <div class="card"></div>
+        </div>
+        <div>
+            <div class="card"></div>
+        </div>
+        <div>
+            <div class="card"></div>
+        </div>
+        <div>
+            <div class="card"></div>
+        </div>
+        <div>
+            <div class="card"></div>
+        </div>
+        <div>
+            <div class="card"></div>
         </div>
     </div>
+    <button onclick="shuffle()">洗</button>
     <pre>
         分为3个阶段， 每个阶段区分成不同动画，通过 dealy 控制执行
         1. 初始阶段 正放在中央， 移动到发牌位置
@@ -94,9 +345,8 @@
             }
         }
     </pre>
-    <button onclick="shuffle()">洗</button>
     <script>
-    function shuffle() {
+        function shuffle() {
             let desk = document.getElementById('ctwj_carddesk');
             if (!/ctwj_shuffle/i.test(desk.className)) {
                 desk.className += ' ctwj_shuffle';
@@ -107,4 +357,5 @@
         }
     </script>
 </body>
+
 </html>
