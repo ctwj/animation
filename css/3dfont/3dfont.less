@@ -1,12 +1,15 @@
-.myfont (@color: #ffd300, @dx: 1, @dy: -1, @step: 10, @darken:.1) {
-    @output: '';
-    .ctwj_3dfont {
-        background-color: #7abcff;
-        color: #FFD300;
-        @val : range(@step);
-        @out : '';   
-    }
+.less_3dfont (@color: #ffd300, @dx: 1, @dy: -1, @darken:.1) {
+    color: @color;
+    @base_darken: 10;
+    @base_color: darken(@color, 10%);
+    text-shadow: 
+        0px 0px 0 darken(@base_color, @darken * (@base_darken + 10)),
+        1px -1px 0 darken(@base_color, @darken * (@base_darken + 20)),
+        2px -2px 0 darken(@base_color, @darken * (@base_darken + 30)),
+        3px -3px 0 darken(@base_color, @darken * (@base_darken + 40)),
+        4px -4px 0 darken(@base_color, @darken * (@base_darken + 50)), 
+        5px -5px 0 darken(@base_color, @darken * (@base_darken + 60));
 }
-.eac {
-    .myfont();
+.ctwj_less_3dfont {
+    .less_3dfont();
 }

@@ -42,10 +42,36 @@
             z-index: 3;
         }
         .opencard .front {
-            transform: rotateY(0deg);
+            animation: frontflipcard 1s ease-in-out 0s 1 forwards;
         }
         .opencard .cover {
-            transform: rotateY(-180deg);
+            animation: coverflipcard 1s ease-in-out 0s 1 forwards;
+        }
+        .closecard .front {
+            animation: frontflipback 1s ease-in-out 0s 1 both;
+        }
+        .closecard .cover {
+            animation: coverflipback 1s ease-in-out 0s 1 both;
+        }
+        @keyframes frontflipcard {
+            0% {transform: translateZ(0)  rotateY(180deg);}
+            50% {transform: translateZ(-100px) rotateY(90deg);}
+            100% {transform: translateZ(0) rotateY(0deg);}
+        }
+        @keyframes coverflipcard {
+            0% {transform: translateZ(0) rotateY(0deg);}
+            50% {transform: translateZ(-100px) rotateY(-90deg);}
+            100% {transform: translateZ(0) rotateY(-180deg);}
+        }
+        @keyframes frontflipback {
+            0% {transform: translateZ(0)  rotateY(0deg);}
+            50% {transform: translateZ(-200px) rotateY(-90deg);}
+            100% {transform: translateZ(0) rotateY(-180deg);}
+        }
+        @keyframes coverflipback {
+            0% {transform: translateZ(0) rotateY(-180deg);}
+            50% {transform: translateZ(-200px) rotateY(-270deg);}
+            100% {transform: translateZ(0) rotateY(-360deg);}
         }
     </style>
 </head>
@@ -53,10 +79,10 @@
     <div class="container">
         <div id="card" class="flipcard card">
             <div class="front">
-                <img src="../../assert/image/front.webp" class="card" alt="" srcset="">
+                <img src="../../assert/image/front.webp" class="card" alt="" >
             </div>
             <div class="cover">
-                <img src="../../assert/image/cover.webp" class="card" alt="" srcset="">
+                <img src="../../assert/image/cover.webp" class="card" alt="" >
             </div>
         </div>
     </div>
@@ -65,9 +91,9 @@
         let card = document.getElementById('card');
         card.addEventListener('click', function(obj) {
             if (!/\opencard\b/i.test(card.className)) {
-                card.className += ' opencard';
+                card.className = 'flipcard card opencard';
             } else  {
-                card.className = 'flipcard card';
+                card.className = 'flipcard card closecard';
             }
             console.log(card.className);
         });
